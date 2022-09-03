@@ -1,0 +1,158 @@
+.message {
+    z-index: 5000;
+    top:0;
+    left:0; 
+    width: 100%;
+    height: 100%;
+}
+
+.message-body {
+    padding-left: 10px;
+    padding-right: 10px;
+    word-break:break-all;
+    display: flex;
+    margin: auto 0 auto 0;
+}
+
+.message-footer {
+    display: flex;
+    margin-bottom: -1rem;
+}
+
+.message-detail {
+   margin-top: 1rem;
+}
+
+.message-textarea {
+    width: 100%;
+    height: 200px;
+}
+
+.message-confirmation-footer { 
+    display: flex;
+    margin: auto 0 auto 0;
+    float: right;
+}
+
+.message-icon {
+    display: flex;
+    margin: auto 0 auto 0;
+}
+
+.message-label {
+    display: flex;
+    margin: auto 0 auto 0;
+    cursor: pointer;
+    opacity: 60%;
+    font-size: 12px;
+}
+
+.message-icon-close{
+    position: absolute;
+    right: 1px;
+    top:1px;
+    width: 16px;
+    cursor: pointer;
+    fill-opacity: 60%;
+}
+
+.message-icons-detail{
+    position: absolute;
+    right: 2px;
+    bottom:1px;
+}
+
+.message-icon-chevronRight, 
+.message-icon-chevronDown,
+.message-icon-clipboard,
+.message-icon-check,
+.message-icon-look{
+    width: 16px;
+    cursor: pointer;
+    fill-opacity: 60%;
+    padding: 0.2rem;
+}
+
+.message-icon-close:hover,
+.message-icon-chevronRight:hover,
+.message-icon-chevronDown:hover,
+.message-icon-clipboard:hover,
+.message-icon-look:hover,
+.message-label:hover{  
+    opacity: 100%;
+    fill-opacity: 100%;
+}
+
+.message-icon-warning,
+.message-icon-success,
+.message-icon-error,
+.message-icon-info,
+.message-icon-confirmation{
+    width: 30px;
+}
+
+.message-success {
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.message-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.message-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.message-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.message-confirmation {
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
+}
+
+.message-detail-open{
+    animation:detailopen 0.4s
+}
+
+@keyframes detailopen{
+    from{height:0px}
+    to{height:200px}
+}
+
+.message-detail-close{
+    animation:detailclose 0.4s
+}
+
+@keyframes detailclose{
+    from{height:200px}
+    to{height:0}
+}
+
+@media (min-width: 320px) {
+    #idDetalle .message-textarea {
+        height: 320px;
+    }
+}
+
+@media (min-width: 768px) {
+    #idDetalle .message-textarea {
+        height: 400px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #idDetalle .message-textarea {
+        height: 500px;
+    }
+}
