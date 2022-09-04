@@ -76,7 +76,7 @@ class Message extends FlashModal {
         this.accept = metod;      
         this.position = "center";
         this.animation = "zoom"
-        this.size = "s";
+        this.size = "m";
         this.opacity = true;          
         this.buttonClose = null;        
         return this;
