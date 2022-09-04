@@ -9,9 +9,13 @@
 .message-body {
     padding-left: 10px;
     padding-right: 10px;
-    word-break:break-all;
+    word-break:break-word;
     display: flex;
     margin: auto 0 auto 0;
+}
+
+.message-title {
+    font-weight: 800;
 }
 
 .message-footer {
@@ -28,7 +32,7 @@
     height: 200px;
 }
 
-.message-confirmation-footer { 
+.message-confirm-footer { 
     display: flex;
     margin: auto 0 auto 0;
     float: right;
@@ -87,7 +91,7 @@
 .message-icon-success,
 .message-icon-error,
 .message-icon-info,
-.message-icon-confirmation{
+.message-icon-confirm{
     width: 30px;
 }
 
@@ -115,7 +119,7 @@
     border-color: #bee5eb;
 }
 
-.message-confirmation {
+.message-confirm {
     color: #383d41;
     background-color: #e2e3e5;
     border-color: #d6d8db;
