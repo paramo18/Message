@@ -14,6 +14,10 @@
     margin: auto 0 auto 0;
 }
 
+.message-body > p {
+      margin: auto 0 auto 0;
+}
+
 .message-title {
     font-weight: 800;
 }

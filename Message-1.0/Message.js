@@ -6,10 +6,11 @@ class Message extends FlashModal {
         this.position = "top-right";
         this.animation = "zoom"
         this.size = "s";
-        this.time = 0;
-        this.header = null;       
+        this.time = 0;                 
         this.buttonClose = createSVGMessage("close");
-        this.opacity = false;
+        this.modal = false;
+        this.header = null;  
+        this.buttons = [];
     }
 
     success(description,title){
@@ -28,37 +29,24 @@ class Message extends FlashModal {
         return this.load("warning",description,title);
     }
 
-    alert(description,title){
-        return this.load("alert",description,title);
-    }
-
-    confirm(description){
-        return this.load("confirm",description);
+    confirm(description,title){
+        return this.load("confirm",description,title);
     }
 
     load(type, description, title) {
-        if (type == "confirm") {
-            this.position = "center";
-            this.animation = "top"
-            this.size = "l";
-            this.opacity = true;
-            this.yes = function(){};
-            this.not = function(){};
-        }
-       
         this.type = type;
         this.description = description;
         this.title = title;
         return this;
     }
 
-    setYes(metod) {
-        this.yes = metod;
-        return this;
-    }
-
-    setNot(metod) {
-        this.not = metod;
+    addButton(value,metod,time){
+        this.position = "center";
+        this.animation = "zoom"
+        this.size = "m";
+        this.modal = true;          
+        this.buttonClose = null; 
+        this.buttons.push({value:value,metod:metod,time:time});
         return this;
     }
 
@@ -70,40 +58,42 @@ class Message extends FlashModal {
     setTitle(title){
         this.title = title;
         return this;
-    }
+    }   
 
-    setAccept(metod) {
-        this.accept = metod;      
-        this.position = "center";
-        this.animation = "zoom"
-        this.size = "m";
-        this.opacity = true;          
-        this.buttonClose = null;        
-        return this;
-    }
-
-    show(){
-        this.id = this.position;
+    show(){        
+        this.id = this.position; 
         if (this.title != undefined){
             this.header = getHeaderMessage(this);  
         }
         this.body = getBodyMessage(this);
-        this.footer = this.detail != undefined || this.accept != undefined ? getFooterMessage(this) : document.createElement("div");        
-        super.show();
+        this.footer = getFooterMessage(this);        
+        super.show();             
     }
     
 }
 
 function getHeaderMessage(modal) {
+
     var label = document.createElement("label");    
     label.textContent = modal.title;
     label.classList.add("message-title");
     return label.outerHTML;
+
 }
 
 function getBodyMessage(modal) {
-    var div = createElement("div",[{class:"message-body"},{innerHTML:modal.description}]);
-    return joinChilds([createSVGMessage(modal.type),div]);
+
+    var div = document.createElement("div");
+    div.classList.add("message-body");
+    var p = document.createElement("p");
+    p.innerHTML = modal.description;
+    div.appendChild(p);
+
+    var fragment = new DocumentFragment();
+    fragment.appendChild(createSVGMessage(modal.type));
+    fragment.appendChild(div);
+    return fragment;
+
 }
 
 function getFooterMessage(modal) {
@@ -111,46 +101,23 @@ function getFooterMessage(modal) {
 
     var fragment = new DocumentFragment();
 
-    if (modal.type == "confirm") {
+    var divConfirm = document.createElement("div");
+    divConfirm.classList.add("message-confirm-footer");
 
-        var accept = document.createElement("button");
-        accept.classList.add("flashModal-button flashModal-accept");
-        accept.textContent = "Si";
-        accept.addEventListener("click", function (e) {
+    modal.buttons.forEach(function(e){
+        var button = document.createElement("button");
+        button.classList.add("flashModal-button","message-" + modal.type);
+        button.textContent = e.value;        
+        button.addEventListener("click", function () {
             closeModal(this.closest(".flashModal-content"), modal);
-            modal.yes();
+            if (e.metod != undefined){
+                e.metod();    
+            }               
         });
+        divConfirm.appendChild(button);         
+    });
 
-        var cancel = document.createElement("button");
-        cancel.classList.add("flashModal-button flashModal-cancel");
-        cancel.textContent = "No";
-        cancel.addEventListener("click", function () {
-            closeModal(this.closest(".flashModal-content"), modal);
-            modal.not();
-        });
-
-        var div = document.createElement("div");
-        div.classList.add("message-confirm-footer");
-        div.appendChild(accept);
-        div.appendChild(cancel);
-        fragment.appendChild(div);
-    } 
-
-    if (modal.accept != undefined) {
-
-        var accept = document.createElement("button");
-        accept.classList.add("flashModal-button","message-" + modal.type);
-        accept.textContent = "Aceptar";
-        accept.addEventListener("click", function (e) {
-            closeModal(this.closest(".flashModal-content"), modal);
-            modal.accept();
-        });
-
-        var div = document.createElement("div");
-        div.classList.add("message-confirm-footer");
-        div.appendChild(accept);        
-        fragment.appendChild(div);
-    } 
+    fragment.appendChild(divConfirm);    
 
     if (modal.detail != undefined){
 
@@ -178,7 +145,8 @@ function getFooterMessage(modal) {
         detail.classList.add("message-detail", "flashModal-hide");
         detail.innerHTML = getMessageDetail(modal);
 
-        fragment.appendChild(div,detail);
+        fragment.appendChild(div);
+        fragment.appendChild(detail);
 
     }
 
@@ -265,6 +233,7 @@ function eventShowDetailAll(modal){
                   .show();
     
 }
+
 
 function createSVGMessage(icon,modal){
 
