@@ -38,3 +38,4 @@ new Message().error("Mensaje de advertencia").show();
 ```
 <img src="Image/warning.PNG" width="250">
 <img src="Image/warning.PNG" width="250">git
+<img src="Image/warning.PNG" width="250">git
