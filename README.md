@@ -37,5 +37,17 @@ new Message().error("Mensaje error").show();
 new Message().error("Mensaje de advertencia").show();
 ```
 <img src="Image/warning.PNG" width="250">
-<img src="Image/warning.PNG" width="250">git
-<img src="Image/warning.PNG" width="250">git
+
+#### Crear Mensaje de confirmación
+
+```javascript
+new Message().question("¿Desea continuar?")
+             .setTitle("Confirmación")
+             .addButton("Aceptar",function(){miMedotoAceptar()})
+             .addButton("Cancelar")
+             .setPosition("center")
+             .setModal(true)
+             .setSize("m")
+             .show();
+```
+<img src="Image/confirmacion.PNG" width="250">

@@ -22,13 +22,14 @@
     font-weight: 800;
 }
 
-.message-footer {
+.message-footer{
     display: flex;
     margin-bottom: -1rem;
 }
 
 .message-detail {
-   margin-top: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .message-textarea {
@@ -36,7 +37,7 @@
     height: 200px;
 }
 
-.message-confirm-footer { 
+.message-footer-button { 
     display: flex;
     margin: auto 0 auto 0;
     float: right;
@@ -95,7 +96,7 @@
 .message-icon-success,
 .message-icon-error,
 .message-icon-info,
-.message-icon-confirm{
+.message-icon-question{
     width: 30px;
 }
 
@@ -123,7 +124,7 @@
     border-color: #bee5eb;
 }
 
-.message-confirm {
+.message-question {
     color: #383d41;
     background-color: #e2e3e5;
     border-color: #d6d8db;
