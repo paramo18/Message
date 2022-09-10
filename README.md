@@ -50,4 +50,4 @@ new Message().question("¿Desea continuar?")
              .setSize("m")
              .show();
 ```
-<img src="Image/confirmacion1.PNG" width="250">
+<img src="Image/confirmacion1.PNG" width="500">
