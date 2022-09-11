@@ -51,6 +51,11 @@ new Message().question("Mensaje con pregunta").show();
 <img src="Image/question.PNG" width="250">
 
 ### Titulo del Mensaje (setTitle)
+
+```javascript
+setTitle(titulo)
+```
+
 ```javascript
 new Message().info("Mensaje Informativo")
              .setTitle("Información")
@@ -58,7 +63,12 @@ new Message().info("Mensaje Informativo")
 ```
 <img src="Image/info_title.PNG" width="250">
 
-### Detalle del Mensaje (setDetail)
+### Detalle del Mensaje
+
+```javascript
+setDetail(detalle)
+```
+
 ```javascript
 new Message().error("Mensaje de Error")
              .setTitle("Error")
@@ -68,7 +78,12 @@ new Message().error("Mensaje de Error")
 <img src="Image/error_detail.PNG" width="250">
 <img src="Image/error_detail2.PNG" width="250">
 
-### Adicionar botones al Mensaje (addButton)
+### Adicionar botones al Mensaje
+
+```javascript
+addButton(nombreBoton,metodo)
+```
+
 ```javascript
 new Message().success("Mensaje de Exitoso")
              .setTitle("Existoso")
