@@ -77,7 +77,11 @@ new Message().success("Mensaje de Exitoso")
 ```
 <img src="Image/success_button.PNG" width="250">
 
-### Tamaño del Mensaje (setSize)
+### Tamaño del Mensaje
+
+```javascript
+setSize(valor)
+```
 
 | Tamaño      | valor        |
 | ----------- | ------------ |
@@ -95,7 +99,11 @@ new Message().warning("Mensaje de Advertencia con tamaño Mediano")
 ```
 <img src="Image/warning_size.PNG" width="300">
 
-### Posición del Mensaje (setPosition(String))
+### Posición del Mensaje
+
+```javascript
+setPosition(valor)
+```
 
 | Posición              | valor                |
 | -----------           | -----------          |
@@ -117,7 +125,11 @@ new Message().error("Mensaje de error ubicado en el centro.")
 ```
 <img src="Image/error_position.PNG" width="250">
 
-### Posición del Mensaje (setAnimation(String))
+### Animación del Mensaje
+
+```javascript
+setAnimation(valor)
+```
 
 | Animación             | valor           |
 | -----------           | -----------     |
@@ -129,13 +141,17 @@ new Message().error("Mensaje de error ubicado en el centro.")
 | Desde abajo           | "bottom"        |
 
 ```javascript
-new Message().success("Mensaje Exitoso con animación Aparecer")
+new Message().success("Mensaje Exitoso aparece desde la derecha")
              .setTitle("Exitoso")
-             .setAnimation("opacity")
+             .setAnimation("right")
              .show();
 ```
 
-### Tiempo del Mensaje (setTime(int))
+### Tiempo del Mensaje
+
+```javascript
+setTime(segundos)
+```
 
 ```javascript
 new Message().error("Mensaje de Error con tiempo de 5 segundos en Pantalla")
@@ -144,7 +160,11 @@ new Message().error("Mensaje de Error con tiempo de 5 segundos en Pantalla")
              .show();
 ```
 
-### Mensaje tipo Modal (setModal(boolean))
+### Mensaje tipo Modal
+
+```javascript
+setModal(true)
+```
 
 ```javascript
 new Message().success("Mensaje de Exito con pantalla bloqueada tipo modal")
