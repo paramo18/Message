@@ -49,8 +49,8 @@ class Message extends FlashModal {
         return this;
     }
 
-    addButton(value,metod,time){
-        this.buttons.push({value:value,metod:metod,time:time});
+    addButton(value,metod){
+        this.buttons.push({value:value,metod:metod});
         return this;
     }    
 
