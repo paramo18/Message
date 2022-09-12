@@ -98,13 +98,13 @@ new Message().success("Mensaje de Exitoso")
 setSize(valor)
 ```
 
-| Tamaño      | valor        |
-| ----------- | ------------ |
-| muy pequeño | "xs"         |
-| pequeño     | "s" (Default)|
-| Mediano     | "m"          |
-| Grande      | "x"          |
-| muy grande  | "xl"         |
+| Tamaño      | Valor (String) |
+| ----------- | ------------   |
+| muy pequeño | xs             |
+| pequeño     | s (Default)    |
+| Mediano     | m              |
+| Grande      | x              |
+| muy grande  | xl             |
 
 ```javascript
 new Message().warning("Mensaje de Advertencia con tamaño Mediano")
@@ -120,17 +120,17 @@ new Message().warning("Mensaje de Advertencia con tamaño Mediano")
 setPosition(valor)
 ```
 
-| Posición              | valor                |
-| -----------           | -----------          |
-| Arriba a la derecha   | "top-right" (Default)|
-| Arriba en el centro   | "top-center"         |
-| Arriba a la izquierda | "top-left"           |
-| Centro a la derecha   | "center-right"       |
-| Centro                | "center"             |
-| Centro a la izquieda  | "center-left"        |
-| Abajo a la derecha    | "bottom-right"       |
-| Abajo al centro       | "bottom-center"      |
-| Abajo a la izquierda  | "bottom-left"        |
+| Posición              | Valor (String)     |
+| -----------           | -----------        |
+| Arriba a la derecha   | top-right (Default)|
+| Arriba en el centro   | top-center         |
+| Arriba a la izquierda | top-left           |
+| Centro a la derecha   | center-right       |
+| Centro                | center             |
+| Centro a la izquieda  | center-left        |
+| Abajo a la derecha    | bottom-right       |
+| Abajo al centro       | bottom-center      |
+| Abajo a la izquierda  | bottom-left        |
 
 ```javascript
 new Message().error("Mensaje de error ubicado en el centro.")
@@ -146,14 +146,14 @@ new Message().error("Mensaje de error ubicado en el centro.")
 setAnimation(valor)
 ```
 
-| Animación             | valor           |
-| -----------           | -----------     |
-| ampliar               | "zoom" (Default)|
-| Aparecer              | "opacity"       |
-| Desde arriba          | "top"           |
-| Desde la derecha      | "right"         |
-| Desde la izquierda    | "left"          |
-| Desde abajo           | "bottom"        |
+| Animación             | Valor (String)  |
+| -----------           | ----------------|
+| ampliar               | zoom (Default)  |
+| Aparecer              | opacity         |
+| Desde arriba          | top             |
+| Desde la derecha      | right           |
+| Desde la izquierda    | left            |
+| Desde abajo           | bottom          |
 
 ```javascript
 new Message().success("Mensaje Exitoso aparece desde la derecha")

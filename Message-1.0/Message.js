@@ -55,7 +55,7 @@ class Message extends FlashModal {
     }    
 
     show(){        
-        this.id = this.position; 
+        this.id = "message-" + this.position; 
         if (this.title != undefined){
             this.header = getHeaderMessage(this);  
         }
