@@ -6,16 +6,16 @@
 ## Archivos Requeridos
 ### Message <a href="https://codeload.github.com/paramo18/Message/zip/refs/heads/main" download>Download .zip</a>
 ```html 
-<link rel="stylesheet" href="Message\Message.css">
-<script type="text/javascript" src="Message\Message.js"></script>
+<link rel="stylesheet" href="Message-1.0\Message.css">
+<script type="text/javascript" src="Message-1.0\Message.js"></script>
 ``` 
 
 
 
 ### FlashModal <a href="https://codeload.github.com/paramo18/Message/zip/refs/heads/main/Message.js" download>Download .zip</a>
 ```html    
-<link rel="stylesheet" href="FlashModal\FlashModal.css">
-<script type="text/javascript" src="Message\Message.js"></script>
+<link rel="stylesheet" href="FlashModal-1.0\FlashModal.css">
+<script type="text/javascript" src="FlashModal-1.0\FlashModal.js"></script>
 ``` 
 
 ## Usabilidad
@@ -50,7 +50,7 @@ new Message().question("Mensaje con pregunta").show();
 ```
 <img src="Image/question.PNG" width="250">
 
-### Titulo del Mensaje (setTitle)
+### Titulo del Mensaje
 
 ```javascript
 setTitle(titulo)
