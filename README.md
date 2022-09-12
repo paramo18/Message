@@ -110,7 +110,7 @@ new Message().warning("Mensaje de Advertencia con tamaño Mediano")
              .setSize("m")
              .show();
 ```
-<img src="Image/warning_size.PNG" width="300">
+<img src="Image/warning_size.PNG" width="500">
 
 ### Posición del Mensaje
 
