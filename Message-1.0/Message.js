@@ -222,7 +222,7 @@ function eventShowDetailAll(modal){
     footer.appendChild(createSVGMessage("clipboard",modal));
     footer.appendChild(createSVGMessage("check",modal));
 
-    new FlashModal("idDetalle", header.outerHTML, body, footer)
+    new FlashModal("message-detalle-flashmodal", header.outerHTML, body, footer)
                   .setPosition("center")
                   .setSize("l")
                   .setClassModal("message")

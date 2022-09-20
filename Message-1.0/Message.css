@@ -12,6 +12,8 @@
     word-break:break-word;
     display: flex;
     margin: auto 0 auto 0;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .message-body > p {
@@ -149,19 +151,20 @@
 }
 
 @media (min-width: 320px) {
-    #idDetalle .message-textarea {
+    #message-detalle-flashmodal .message-textarea {
         height: 200px;
     }
 }
 
 @media (min-width: 768px) {
-    #idDetalle .message-textarea {
+    #message-detalle-flashmodal .message-textarea {
         height: 400px;
     }
 }
 
 @media (min-width: 1024px) {
-    #idDetalle .message-textarea {
+    #message-detalle-flashmodal .message-textarea {
         height: 500px;
     }
 }
+
