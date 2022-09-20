@@ -150,7 +150,7 @@
 
 @media (min-width: 320px) {
     #idDetalle .message-textarea {
-        height: 320px;
+        height: 200px;
     }
 }
 
